@@ -61,8 +61,9 @@ $asset-base-path: "..";
 
 :root {
   // fontFamily
-  --font-family-primary: Caponi Display;
-  --font-family-secondary: SS Nickson Six;
+  --font-family-primary: Roboto;
+  --font-family-secondary: Rubik;
+  --font-material-icons: Material Icons;
   // fontSize
   @include set-text($custom-scale);
   // colors

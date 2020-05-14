@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 const regex = new RegExp(/production/);
 const production = process.argv.some((e) => regex.test(e));
 
@@ -37,6 +39,13 @@ module.exports = {
           800: "var(--color-secondary-800)",
           900: "var(--color-secondary-900)",
         },
+      },
+      fontFamily: {
+        sans: ["var(--font-family-primary)", ...defaultTheme.fontFamily.sans],
+        headline: [
+          "var(--font-family-secondary)",
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       fontSize: {
         xs: "var(--text-xs)",
