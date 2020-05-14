@@ -26,27 +26,6 @@ window.onload = () => {
     await setText(foo, "tres");
     await setText(foo, "catorce");
   })();
-
-  function component() {
-    const element = document.createElement("div");
-    const button = document.createElement("button");
-    const br = document.createElement("br");
-
-    button.innerHTML = "Click me and look at the console!";
-    element.innerHTML = "Hello Webpack";
-    element.appendChild(br);
-    element.appendChild(button);
-
-    button.addEventListener("click", async () => {
-      const { sum } = await import(
-        /* webpackChunkName: "utils" */ "./modules/utils"
-      );
-      console.log(sum(1, 2));
-    });
-
-    return element;
-  }
-  document.body.appendChild(component());
 };
 
 // Accept HMR as per: https://webpack.js.org/api/hot-module-replacement#accept

@@ -112,7 +112,6 @@ module.exports = {
   entry: configureEntries(),
   output: {
     filename: path.join("./js", "[name].bundle.js"),
-    chunkFilename: path.join("./js", "[name].bundle.js"),
     path: path.resolve(__dirname, settings.paths.dist.base),
     publicPath: settings.urls.publicPath(),
   },

@@ -44,6 +44,6 @@ module.exports = {
     basePath: "",
   },
   purgeCssConfig: {
-    paths: ["./templates/**/*.{twig,html}"],
+    paths: ["./templates/**/*.{twig,html}", "./src/js/**/*.js"],
   },
 };
