@@ -1,10 +1,8 @@
-import "alpinejs";
 // Import theme styles
 import "../css/main.scss";
-
+// Package plugins
+import "alpinejs";
 import stickybits from "stickybits";
-
-stickybits("#header");
 
 window.onload = () => {
   stickybits("#header");
