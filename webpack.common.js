@@ -15,32 +15,35 @@ const configureBabelLoader = () => {
   return {
     test: /\.js$/,
     exclude: settings.babelLoaderConfig.exclude,
-    use: {
-      loader: "babel-loader",
-      options: {
-        cacheDirectory: true,
-        presets: [
-          [
-            "@babel/preset-env",
-            {
-              targets: {
-                node: "current",
+    use: [
+      {
+        loader: "babel-loader",
+        options: {
+          cacheDirectory: true,
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                targets: {
+                  node: "current",
+                },
+                modules: false,
+                corejs: {
+                  version: 2,
+                  proposals: true,
+                },
+                useBuiltIns: "usage",
               },
-              modules: false,
-              corejs: {
-                version: 2,
-                proposals: true,
-              },
-              useBuiltIns: "usage",
-            },
+            ],
           ],
-        ],
-        plugins: [
-          "@babel/plugin-syntax-dynamic-import",
-          "@babel/plugin-transform-runtime",
-        ],
+          plugins: [
+            "@babel/plugin-syntax-dynamic-import",
+            "@babel/plugin-transform-runtime",
+          ],
+        },
       },
-    },
+      "eslint-loader",
+    ],
   };
 };
 
@@ -48,7 +51,10 @@ const configureBabelLoader = () => {
 const configureEntries = () => {
   let entries = {};
   for (const [key, value] of Object.entries(settings.entries)) {
-    entries[key] = path.resolve(__dirname, settings.paths.src.js + value);
+    entries[key] = path.resolve(
+      __dirname,
+      settings.paths.src.js + value
+    );
   }
   return entries;
 };
