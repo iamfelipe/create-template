@@ -46,7 +46,7 @@
       <div id="content-wrapper">
         <div id="content">
           <div id="app" class="text-center">
-            <article class="space-y-6 py-12" x-data="data()">
+            <article class="space-y-6 py-12" x-data="page()">
               <header class="space-y-3">
                 <h1
                   class="text-3xl tracking-tight xl:text-4xl font-black leading-10 font-headline uppercase"
@@ -63,7 +63,7 @@
                   <a
                     href="https://github.com/iamfelipe/static-boilerplate"
                     target="_blank"
-                    class="text-primary-500 underline"
+                    class="underline text-primary-500 hover:text-primary-600"
                     >project documentation</a
                   >.
                 </p>
@@ -131,8 +131,9 @@
         </div>
       </div>
     </div>
-    <script>
-      function data() {
+    <!--Alpine data-->
+    <script type="text/javascript">
+      function page() {
         return {
           essentialLinks: [
             {
