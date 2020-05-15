@@ -2,10 +2,5 @@
 // Group root
 //
 
-%group {
-  @include margin-bottom();
-}
-
 .form-group {
-  @extend %group;
 }

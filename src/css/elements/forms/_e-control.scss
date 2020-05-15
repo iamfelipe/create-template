@@ -1,12 +1,8 @@
-// Control root
-// ---------
+//
+// Element Control
+//
 
 %control {
-  //margin-bottom: 0;
-
-  @include plain-hover-focus() {
-    outline: transparent;
-  }
 }
 
 .form-control {

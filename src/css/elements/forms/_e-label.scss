@@ -1,9 +1,7 @@
 //
-// Label
+// Element Label
 //
 
 .form-control-label {
-  @extend %small;
-  display: block;
-  margin-bottom: $vertical-rhythm / 4;
+  @extend .type-sm;
 }

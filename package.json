@@ -33,6 +33,7 @@
     "bootstrap": "^4.4.1",
     "clean-webpack-plugin": "^3.0.0",
     "dotenv": "^8.2.0",
+    "family.scss": "^1.0.8",
     "imagemin": "^7.0.1",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^8.0.0",
