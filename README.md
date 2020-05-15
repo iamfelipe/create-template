@@ -51,13 +51,15 @@ To get a local copy up and running follow these simple steps.
 
    ```sh
    $ npx @felipecastillo/create-template
+   # or
+   $ npm i @felipecastillo/create-template
    ```
 
 2. Install packages if not installed by CLI:
 
    ```sh
    $ npm install
-   # OR
+   # or
    $ yarn
    ```
 
@@ -116,9 +118,9 @@ To get a local copy up and running follow these simple steps.
 
 6. Then in the same directory, run the development server:
    ```sh
-   $ npm run dev:start-server
-   # OR
-   $ yarn run dev:start-server
+   $ npm run dev:start
+   # or
+   $ yarn run dev:start
    ```
 
 <!-- PRODUCTION DEPLOYMENT -->
@@ -143,7 +145,7 @@ To get a local copy up and running follow these simple steps.
 
    ```sh
    $ npm run prod:build
-   # OR
+   # or
    $ yarn run prod:build
    ```
 

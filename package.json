@@ -18,7 +18,7 @@
   },
   "private": true,
   "scripts": {
-    "dev:start-server": "webpack-dev-server --env.NODE_ENV=development --config=webpack.dev.js",
+    "dev:start": "webpack-dev-server --env.NODE_ENV=development --config=webpack.dev.js",
     "prod:build": "webpack --env.NODE_ENV=production --progress --config=webpack.prod.js",
     "dev:test": "jest"
   },
