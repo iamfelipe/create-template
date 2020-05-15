@@ -50,7 +50,7 @@ To get a local copy up and running follow these simple steps.
 1. First, install and generate a custom template:
 
    ```sh
-   npx @felipecastillo/create-template
+   $ npx @felipecastillo/create-template
    ```
 
 2. Install packages if not installed by CLI:
