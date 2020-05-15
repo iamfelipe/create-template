@@ -1,3 +1,4 @@
+import "alpinejs";
 // Import theme styles
 import "../css/main.scss";
 

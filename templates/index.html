@@ -14,7 +14,7 @@
         <div class="w-full max-w-screen-xl relative mx-auto px-6 flex flex-col">
           <div class="flex items-center">
             <div class="">
-              <h1>Boilerplate</h1>
+              <h1>Frontend Template</h1>
             </div>
             <div class="ml-auto">
               <div class="text-gray-500">
@@ -46,7 +46,7 @@
       <div id="content-wrapper">
         <div id="content">
           <div id="app" class="text-center">
-            <article class="space-y-6 py-12">
+            <article class="space-y-6 py-12" x-data="data()">
               <header class="space-y-3">
                 <h1
                   class="text-3xl tracking-tight xl:text-4xl font-black leading-10 font-headline uppercase"
@@ -73,33 +73,19 @@
                   Essential Links
                 </h3>
                 <ul class="flex flex-wrap justify-center space-x-4">
-                  <li>
-                    <a
-                      href="https://github.com/modularscale/modularscale-sass"
-                      target="_blank"
-                      rel="noopener"
-                      class="text-primary-500 underline"
-                      >Modular Scale</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://tailwindcss.com/"
-                      target="_blank"
-                      rel="noopener"
-                      class="text-primary-500 underline"
-                      >Tailwind CSS</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://getbootstrap.com/docs/4.5/getting-started/theming/"
-                      target="_blank"
-                      rel="noopener"
-                      class="text-primary-500 underline"
-                      >Theming Bootstrap</a
-                    >
-                  </li>
+                  <template
+                    x-for="[idx, link] in Object.entries(essentialLinks)"
+                  >
+                    <li x-bind:data-key="idx">
+                      <a
+                        x-bind:href="link.url"
+                        x-text="link.name"
+                        target="_blank"
+                        rel="noopener"
+                        class="underline text-primary-500 hover:text-primary-600"
+                      ></a>
+                    </li>
+                  </template>
                 </ul>
               </section>
               <section class="space-y-3">
@@ -107,24 +93,17 @@
                   Ecosystem
                 </h3>
                 <ul class="flex flex-wrap justify-center space-x-4">
-                  <li>
-                    <a
-                      href="http://getbem.com"
-                      target="_blank"
-                      rel="noopener"
-                      class="text-primary-500 underline"
-                      >BEM</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="http://smacss.com"
-                      target="_blank"
-                      rel="noopener"
-                      class="text-primary-500 underline"
-                      >SMACSS</a
-                    >
-                  </li>
+                  <template x-for="[idx, link] in Object.entries(ecosystem)">
+                    <li x-bind:data-key="idx">
+                      <a
+                        x-bind:href="link.url"
+                        x-text="link.name"
+                        target="_blank"
+                        rel="noopener"
+                        class="underline text-primary-500 hover:text-primary-600"
+                      ></a>
+                    </li>
+                  </template>
                 </ul>
               </section>
               <section class="space-y-3">
@@ -132,42 +111,19 @@
                   Installed plugins
                 </h3>
                 <ul class="flex flex-wrap justify-center space-x-4">
-                  <li>
-                    <a
-                      href="https://webpack.js.org"
-                      target="_blank"
-                      rel="noopener"
-                      class="text-primary-500 underline"
-                      >Webpack</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://babeljs.io/"
-                      target="_blank"
-                      rel="noopener"
-                      class="text-primary-500 underline"
-                      >Babel</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://prettier.io/"
-                      target="_blank"
-                      rel="noopener"
-                      class="text-primary-500 underline"
-                      >Prettier</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://postcss.org"
-                      target="_blank"
-                      rel="noopener"
-                      class="text-primary-500 underline"
-                      >PostCSS</a
-                    >
-                  </li>
+                  <template
+                    x-for="[idx, link] in Object.entries(installedPlugins)"
+                  >
+                    <li x-bind:data-key="idx">
+                      <a
+                        x-bind:href="link.url"
+                        x-text="link.name"
+                        target="_blank"
+                        rel="noopener"
+                        class="underline text-primary-500 hover:text-primary-600"
+                      ></a>
+                    </li>
+                  </template>
                 </ul>
               </section>
             </article>
@@ -175,7 +131,59 @@
         </div>
       </div>
     </div>
-
+    <script>
+      function data() {
+        return {
+          essentialLinks: [
+            {
+              url: "https://github.com/modularscale/modularscale-sass",
+              name: "Modular Scale",
+            },
+            {
+              url: "https://tailwindcss.com/",
+              name: "Tailwind CSS",
+            },
+            {
+              url: "https://getbootstrap.com/docs/4.5/getting-started/theming/",
+              name: "Theming Bootstrap",
+            },
+          ],
+          ecosystem: [
+            {
+              url: "http://getbem.com",
+              name: "BEM",
+            },
+            {
+              url: "http://smacss.com",
+              name: "SMACSS",
+            },
+          ],
+          installedPlugins: [
+            {
+              url: "https://babeljs.io/",
+              name: "Webpack",
+            },
+            {
+              url: "https://tailwindcss.com/",
+              name: "Babel",
+            },
+            {
+              url: "https://prettier.io/",
+              name: "Prettier",
+            },
+            {
+              url: "https://postcss.org",
+              name: "PostCSS",
+            },
+          ],
+        };
+      }
+    </script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js"
+      defer
+    ></script>
     <script src="./../dist/js/vendor.bundle.js"></script>
     <script src="./../dist/js/main.bundle.js"></script>
   </body>
