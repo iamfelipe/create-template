@@ -72,4 +72,5 @@ $asset-base-path: "..";
   @include palette("secondary", $secondary);
   // components
   --border-width: #{em(1.5)};
+  --vertical-rhythm: calc(#{$font-size-base} * #{$line-height-base});
 }
