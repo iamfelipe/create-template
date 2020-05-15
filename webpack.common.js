@@ -2,6 +2,7 @@
 const path = require("path");
 
 // Webpack plugins
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const WebpackNotifierPlugin = require("webpack-notifier");
 
@@ -135,6 +136,7 @@ module.exports = {
     },
   },
   plugins: [
+    new CopyWebpackPlugin(settings.copyWebpackConfig),
     new ManifestPlugin(configureManifest("manifest.json")),
     new WebpackNotifierPlugin({
       title: "Webpack",

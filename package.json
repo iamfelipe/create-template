@@ -32,6 +32,7 @@
     "alpinejs": "^2.3.3",
     "bootstrap": "^4.4.1",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
     "dotenv": "^8.2.0",
     "family.scss": "^1.0.8",
     "imagemin": "^7.0.1",
