@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
     <title>Title</title>
     <link rel="stylesheet" href="./../dist/css/main.css" />
   </head>
@@ -11,7 +14,9 @@
       <div
         class="bg-white border-b border-gray-200 flex h-16 items-center z-100"
       >
-        <div class="w-full max-w-screen-xl relative mx-auto px-6 flex flex-col">
+        <div
+          class="w-full max-w-screen-xl relative mx-auto px-6 flex flex-col"
+        >
           <div class="flex items-center">
             <div class="">
               <h1>Frontend Template</h1>
@@ -49,7 +54,7 @@
             <article class="space-y-6 py-8" x-data="page()">
               <header class="space-y-2">
                 <img
-                  src="./../dist/static/webpack.png"
+                  src="./../dist/img/webpack.png"
                   alt="Webpack logo"
                   class="mx-auto w-40"
                 />
@@ -61,8 +66,8 @@
                   Frontend Template
                 </h1>
                 <p>
-                  For a guide and recipes on how to configure / customize this
-                  project,
+                  For a guide and recipes on how to configure /
+                  customize this project,
                   <br />
                   check out the
                   <a
@@ -74,7 +79,9 @@
                 </p>
               </header>
               <section class="space-y-2">
-                <h3 class="text-lg font-black font-headline uppercase">
+                <h3
+                  class="text-lg font-black font-headline uppercase"
+                >
                   Essential Links
                 </h3>
                 <ul class="flex flex-wrap justify-center space-x-4">
@@ -94,11 +101,15 @@
                 </ul>
               </section>
               <section class="space-y-2">
-                <h3 class="text-lg font-black font-headline uppercase">
+                <h3
+                  class="text-lg font-black font-headline uppercase"
+                >
                   Ecosystem
                 </h3>
                 <ul class="flex flex-wrap justify-center space-x-4">
-                  <template x-for="[idx, link] in Object.entries(ecosystem)">
+                  <template
+                    x-for="[idx, link] in Object.entries(ecosystem)"
+                  >
                     <li x-bind:data-key="idx">
                       <a
                         x-bind:href="link.url"
@@ -112,7 +123,9 @@
                 </ul>
               </section>
               <section class="space-y-2">
-                <h3 class="text-lg font-black font-headline uppercase">
+                <h3
+                  class="text-lg font-black font-headline uppercase"
+                >
                   Installed plugins
                 </h3>
                 <ul class="flex flex-wrap justify-center space-x-4">
@@ -142,7 +155,8 @@
         return {
           essentialLinks: [
             {
-              url: "https://github.com/modularscale/modularscale-sass",
+              url:
+                "https://github.com/modularscale/modularscale-sass",
               name: "Modular Scale",
             },
             {
@@ -150,7 +164,8 @@
               name: "Tailwind CSS",
             },
             {
-              url: "https://getbootstrap.com/docs/4.5/getting-started/theming/",
+              url:
+                "https://getbootstrap.com/docs/4.5/getting-started/theming/",
               name: "Theming Bootstrap",
             },
           ],

@@ -4,6 +4,12 @@ import "../css/main.scss";
 import "alpinejs";
 import stickybits from "stickybits";
 
+// Import our static images
+function importAll(r) {
+  return r.keys().map(r);
+}
+importAll(require.context("../static/", false, /\.(png|jpe?g|svg)$/));
+
 window.onload = () => {
   stickybits("#header");
 };

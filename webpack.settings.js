@@ -28,13 +28,14 @@ module.exports = {
   },
   copyWebpackConfig: [
     {
-      from: "./src/static/**/*",
+      from: "./src/assets/**/*",
       to: "[folder]/[name].[ext]?[contenthash]",
       flatten: true,
     },
   ],
   devServerConfig: {
-    public: () => process.env.DEVSERVER_PUBLIC || "http://localhost:8080",
+    public: () =>
+      process.env.DEVSERVER_PUBLIC || "http://localhost:8080",
     host: () => process.env.DEVSERVER_HOST || "localhost",
     poll: () => process.env.DEVSERVER_POLL || false,
     port: () => process.env.DEVSERVER_PORT || 8080,
