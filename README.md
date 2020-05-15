@@ -151,7 +151,7 @@ To get a local copy up and running follow these simple steps.
 
 ## License
 
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/iamfelipe/static-boilerplate/blob/master/LICENSE) for more information.
 
 ## Collaborators
 
