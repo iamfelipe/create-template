@@ -1,13 +1,11 @@
 <!-- PROJECT LOGO -->
 <p align="center">
-  <h3 align="center">Frontend Template</h3>
+  <h1 align="center"><b>Frontend Template</b></h1>
 
   <p align="center">
     <a href="https://github.com/iamfelipe/static-boilerplate"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/iamfelipe/static-boilerplate">View Demo</a>
-    ·
     <a href="https://github.com/iamfelipe/static-boilerplate/issues">Report Bug</a>
     ·
     <a href="https://github.com/iamfelipe/static-boilerplate/issues">Request Feature</a>
@@ -45,9 +43,9 @@ Site template built with Top-Notch technologies and methodologies.
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
-
 > 🏗 Most of the setup below is enabled by default.
+
+To get a local copy up and running follow these simple steps.
 
 1. First, install and generate a custom template:
 
@@ -55,15 +53,15 @@ To get a local copy up and running follow these simple steps.
    npx @felipecastillo/create-template
    ```
 
-2. Install packages if are not installed by CLI:
+2. Install packages if not installed by CLI:
 
    ```sh
-   npm install
+   $ npm install
    # OR
-   yarn
+   $ yarn
    ```
 
-3. Setup custom routes in `webpack.settings.js`:
+3. Setup custom file routes in `webpack.settings.js`:
 
    ```javascript
    // webpack.settings.js
@@ -97,12 +95,12 @@ To get a local copy up and running follow these simple steps.
 
 4. Import custom theme styles in `src/js/index.js` file:
 
-   > ⚠️ In development mode the styles are not exported in the `dist` folder because are injected into the scripts.️
-
    ```javascript
    // index.js
    import "../css/main.scss";
    ```
+
+   > ⚠️ In development mode the styles are not exported in the `dist` folder because are injected into the scripts.️
 
 5. Create `.env` file in the directory with the `package.json` file:
 
@@ -118,9 +116,9 @@ To get a local copy up and running follow these simple steps.
 
 6. Then in the same directory, run the development server:
    ```sh
-   npm run dev:start-server
+   $ npm run dev:start-server
    # OR
-   yarn run dev:start-server
+   $ yarn run dev:start-server
    ```
 
 <!-- PRODUCTION DEPLOYMENT -->
@@ -141,9 +139,9 @@ To get a local copy up and running follow these simple steps.
 
 2. Run production build:
    ```sh
-   npm run prod:build
+   $ npm run prod:build
    # OR
-   yarn run prod:build
+   $ yarn run prod:build
    ```
 
 ## License
