@@ -125,7 +125,9 @@ To get a local copy up and running follow these simple steps.
 
 ## Production deployment
 
-1. ️☠️ If Tailwind CSS is up and running in the project, include files to purge:
+1. Include files to purge:
+
+   > ☠️ Only if Tailwind CSS is up and running in the project.
 
    ```javascript
    // webpack.settings.js
@@ -138,15 +140,18 @@ To get a local copy up and running follow these simple steps.
    ```
 
 2. Run production build:
+
    ```sh
    $ npm run prod:build
    # OR
    $ yarn run prod:build
    ```
 
+3. Deploy if needed 🚀🚀🚀
+
 ## License
 
-MIT
+Distributed under the MIT License. See LICENSE for more information.
 
 ## Collaborators
 
