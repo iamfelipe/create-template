@@ -104,6 +104,8 @@ To get a local copy up and running follow these simple steps.
 
    > ⚠️ In development mode the styles are not exported in the `dist` folder because are injected into the scripts.️
 
+   > To disable **Tailwind CSS** remove the require statement on `postcss.config.js` and its SCSS partial on `css/vendor`.
+
 5. Create `.env` file in the directory with the `package.json` file:
 
    ```
