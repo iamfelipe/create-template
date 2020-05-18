@@ -50,9 +50,9 @@ To get a local copy up and running follow these simple steps.
 1. First, install and generate a custom template:
 
    ```sh
-   $ npx @felipecastillo/create-template
+   $ npx @felipecastillo/create-template --install
    # or
-   $ npm i @felipecastillo/create-template
+   $ npm i @felipecastillo/create-template --install
    ```
 
 2. Install packages if not installed by CLI:
@@ -131,7 +131,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Include files to purge:
 
-   > ☠️ Only if Tailwind CSS is up and running in the project.
+   > ☠️ Only if **Tailwind CSS** is up and running in the project.
 
    ```javascript
    // webpack.settings.js
