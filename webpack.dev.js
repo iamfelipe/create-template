@@ -57,7 +57,7 @@ const configureDevServer = () => {
       poll: !!parseInt(settings.devServerConfig.poll()),
       ignored: /node_modules/,
     },
-    writeToDisk: false,
+    writeToDisk: true,
     compress: true,
     headers: {
       "Access-Control-Allow-Origin": "*",

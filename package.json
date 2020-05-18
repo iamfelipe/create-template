@@ -81,6 +81,11 @@
     "webpack-merge": "^4.2.2",
     "webpack-notifier": "^1.8.0"
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
   "eslintConfig": {
     "parser": "babel-eslint",
     "rules": {
