@@ -52,7 +52,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    $ npx @felipecastillo/create-template --install
    # or
-   $ npm i @felipecastillo/create-template --install
+   $ npm init @felipecastillo/template --install
    ```
 
 2. Install packages if not installed by CLI:
