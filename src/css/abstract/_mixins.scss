@@ -23,7 +23,12 @@
 ///     //      font-style: normal;
 ///     //  }
 
-@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+@mixin font-face(
+  $font-name,
+  $file-name,
+  $weight: normal,
+  $style: normal
+) {
   @at-root {
     @font-face {
       font-family: $font-name;
@@ -144,8 +149,10 @@
   }
 }
 
+// Disabled as looking for an improved way to include Webp images.
 @mixin image($name, $ext: "png", $query: ".") {
-  @at-root .no-js & {
+  background-image: image($name + $query + $ext);
+  /*@at-root .no-js & {
     background-image: image($name + $query + $ext);
   }
   @at-root .no-webp & {
@@ -153,13 +160,11 @@
   }
   @at-root .webp & {
     background-image: image($name + $query + "webp");
-  }
+  }*/
 }
 
 @mixin responsive-image($image, $ext: "png") {
   @include image($image, $ext);
-  background-size: cover;
-  background-position: center center;
 
   @include media-breakpoint-up(lg) {
     @include image($image, $ext, "-lg.");
