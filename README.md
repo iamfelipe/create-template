@@ -106,19 +106,23 @@ To get a local copy up and running follow these simple steps.
 
    > To disable **Tailwind CSS** remove the require statement on `postcss.config.js` and its SCSS partial on `css/vendor`.
 
-5. Create `.env` file in the directory with the `package.json` file:
+5. Include file routes inside `dist` into the project.
+
+   > 📦 Scripts, styles, assets, etc.
+
+6. Create `.env` file in the directory with the `package.json` file:
 
    ```
    // .env
    PUBLIC_PATH="../"
    DEVSERVER_PUBLIC="/dist/"
-   DEVSERVER_HOST="0.0.0.0"
+   DEVSERVER_HOST="localhost"
    DEVSERVER_POLL=1
    DEVSERVER_PORT=8080
    DEVSERVER_HTTPS=1
    ```
 
-6. Then in the same directory, run the development server:
+7. Then in the same directory, run the development server:
    ```sh
    $ npm run dev:start
    # or
