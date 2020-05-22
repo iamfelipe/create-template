@@ -47,7 +47,7 @@ Site template built with Top-Notch technologies and methodologies.
 
 To get a local copy up and running follow these simple steps.
 
-1. First, install and generate a custom template:
+1. First, install and generate a custom template by the custom CLI:
 
    ```sh
    $ npx @felipecastillo/create-template --install

@@ -1,18 +1,13 @@
 // Import theme styles
 import "../css/main.scss";
-// Package plugins
+// Import package plugins
 import "alpinejs";
-import stickybits from "stickybits";
 
-// Import our static images
+// Process custom static images
 function importAll(r) {
   return r.keys().map(r);
 }
 importAll(require.context("../static/", false, /\.(png|jpe?g|svg)$/));
-
-window.onload = () => {
-  stickybits("#header");
-};
 
 // Accept HMR as per: https://webpack.js.org/api/hot-module-replacement#accept
 if (module.hot) {
