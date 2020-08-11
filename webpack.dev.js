@@ -51,7 +51,7 @@ const configureDevServer = () => {
     disableHostCheck: true,
     hot: true,
     overlay: true,
-    https: true,
+    https: !!parseInt(settings.devServerConfig.https()),
     watchContentBase: true,
     watchOptions: {
       poll: !!parseInt(settings.devServerConfig.poll()),
