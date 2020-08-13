@@ -14,7 +14,7 @@ const settings = require("./webpack.settings.js");
 const configureBabelLoader = () => {
   return {
     test: /\.js$/,
-    exclude: settings.babelLoaderConfig.exclude,
+    exclude: [/(node_modules)/],
     use: [
       {
         loader: "babel-loader",
@@ -93,7 +93,7 @@ const configureFontLoader = () => {
       {
         loader: "url-loader",
         options: {
-          limit: 50000,
+          limit: 5000,
           name: "fonts/[name].[ext]?[contenthash:4]",
         },
       },

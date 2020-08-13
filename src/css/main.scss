@@ -8,3 +8,7 @@
 @import "elements/index";
 @import "components/index";
 @import "pages/index";
+
+* {
+  outline: 1px solid tomato;
+}

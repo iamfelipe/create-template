@@ -71,11 +71,6 @@ To get a local copy up and running follow these simple steps.
      paths: {
        /* Source root files */
        src: {
-         base: "./src/",
-         /* Styles root files */
-         css: "./src/css/",
-         /* Script root files */
-
          js: "./src/js/",
        },
        /* Distribution folder */
@@ -110,19 +105,7 @@ To get a local copy up and running follow these simple steps.
 
    > 📦 Scripts, styles, assets, etc.
 
-6. Create `.env` file in the directory with the `package.json` file:
-
-   ```
-   // .env
-   PUBLIC_PATH="../"
-   DEVSERVER_PUBLIC="/dist/"
-   DEVSERVER_HOST="localhost"
-   DEVSERVER_POLL=1
-   DEVSERVER_PORT=8080
-   DEVSERVER_HTTPS=1
-   ```
-
-7. Then in the same directory, run the development server:
+6. Then in the same directory, run the development server:
    ```sh
    $ npm run dev:start
    # or

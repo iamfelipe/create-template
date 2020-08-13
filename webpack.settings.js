@@ -1,14 +1,9 @@
 // webpack.settings.js - webpack settings config
 
-// Node modules
-require("dotenv").config();
-
 // Webpack settings exports
 module.exports = {
   paths: {
     src: {
-      base: "./src/",
-      css: "./src/css/",
       js: "./src/js/",
     },
     dist: {
@@ -18,28 +13,24 @@ module.exports = {
     templates: "./templates/",
   },
   urls: {
-    publicPath: () => process.env.PUBLIC_PATH || "/dist/",
+    publicPath: () => "../",
   },
   entries: {
     main: ["index.js"],
   },
-  babelLoaderConfig: {
-    exclude: [/(node_modules)/],
-  },
   copyWebpackConfig: [
     {
-      from: "./src/assets/**/*",
-      to: "[folder]/[name].[ext]?[contenthash]",
+      context: "./src/assets/",
+      from: "**/*",
+      to: "./assets/[folder]/[name].[ext]?[contenthash]",
       flatten: true,
     },
   ],
   devServerConfig: {
-    public: () =>
-      process.env.DEVSERVER_PUBLIC || "http://localhost:8080",
-    host: () => process.env.DEVSERVER_HOST || "localhost",
-    poll: () => process.env.DEVSERVER_POLL || false,
-    port: () => process.env.DEVSERVER_PORT || 8080,
-    https: () => process.env.DEVSERVER_HTTPS || true,
+    public: () => "/dist/",
+    host: () => "localhost",
+    port: () => 8080,
+    https: () => false,
   },
   manifestConfig: {
     basePath: "",

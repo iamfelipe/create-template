@@ -54,7 +54,7 @@ const configureDevServer = () => {
     https: !!parseInt(settings.devServerConfig.https()),
     watchContentBase: true,
     watchOptions: {
-      poll: !!parseInt(settings.devServerConfig.poll()),
+      poll: true,
       ignored: /node_modules/,
     },
     writeToDisk: true,

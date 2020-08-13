@@ -1,7 +1,5 @@
 // Import theme styles
 import "../css/main.scss";
-// Import package plugins
-import "alpinejs";
 
 // Process custom static images
 function importAll(r) {
