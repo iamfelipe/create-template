@@ -1,0 +1,8 @@
+{
+  "main.css": "/dist/css/main.css?fd96",
+  "main.js": "/dist/js/main.bundle.js",
+  "assets/README.md?5bbfc23db2ca3ba6932e4fb89aff574e": "/dist/assets/README.md?5bbfc23db2ca3ba6932e4fb89aff574e",
+  "css/main.css.map?fd96": "/dist/css/main.css.map?fd96",
+  "fonts/main.scss": "/dist/fonts/Rubik-Black.woff?c203",
+  "js/main.bundle.js.LICENSE.txt": "/dist/js/main.bundle.js.LICENSE.txt"
+}

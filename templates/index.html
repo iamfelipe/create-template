@@ -55,6 +55,7 @@
                 <img
                   src="./../dist/img/webpack.png"
                   alt="Webpack logo"
+                  title="Webpack logo"
                   class="mx-auto w-40"
                 />
                 <h1
@@ -84,19 +85,33 @@
                   Essential Links
                 </h3>
                 <ul class="flex flex-wrap justify-center space-x-4">
-                  <template
-                    x-for="[idx, link] in Object.entries(essentialLinks)"
-                  >
-                    <li x-bind:data-key="idx">
-                      <a
-                        x-bind:href="link.url"
-                        x-text="link.name"
-                        target="_blank"
-                        rel="noopener"
-                        class="underline text-primary-500 hover:text-primary-600"
-                      ></a>
-                    </li>
-                  </template>
+                  <li>
+                    <a
+                      href="https://github.com/modularscale/modularscale-sass"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                      >Modular Scale</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://tailwindcss.com"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                      >Tailwind CSS</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://getbootstrap.com/docs/4.5/getting-started/theming"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                      >Theming Bootstrap</a
+                    >
+                  </li>
                 </ul>
               </section>
               <section class="space-y-2">
@@ -106,19 +121,24 @@
                   Ecosystem
                 </h3>
                 <ul class="flex flex-wrap justify-center space-x-4">
-                  <template
-                    x-for="[idx, link] in Object.entries(ecosystem)"
-                  >
-                    <li x-bind:data-key="idx">
-                      <a
-                        x-bind:href="link.url"
-                        x-text="link.name"
-                        target="_blank"
-                        rel="noopener"
-                        class="underline text-primary-500 hover:text-primary-600"
-                      ></a>
-                    </li>
-                  </template>
+                  <li>
+                    <a
+                      href="http://getbem.com"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                      >BEM</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="http://smacss.com"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                      >SMACSS</a
+                    >
+                  </li>
                 </ul>
               </section>
               <section class="space-y-2">
@@ -128,19 +148,56 @@
                   Installed plugins
                 </h3>
                 <ul class="flex flex-wrap justify-center space-x-4">
-                  <template
-                    x-for="[idx, link] in Object.entries(installedPlugins)"
-                  >
-                    <li x-bind:data-key="idx">
-                      <a
-                        x-bind:href="link.url"
-                        x-text="link.name"
-                        target="_blank"
-                        rel="noopener"
-                        class="underline text-primary-500 hover:text-primary-600"
-                      ></a>
-                    </li>
-                  </template>
+                  <li>
+                    <a
+                      href="https://webpack.js.org"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                    >
+                      Webpack
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://babeljs.io"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                    >
+                      Babel
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://prettier.io"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                    >
+                      Prettier
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://postcss.org"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                    >
+                      PostCSS
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://eslint.org"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline text-primary-500 hover:text-primary-600"
+                    >
+                      ESLint
+                    </a>
+                  </li>
                 </ul>
               </section>
             </article>
@@ -148,61 +205,6 @@
         </div>
       </div>
     </div>
-    <!--Alpine data-->
-    <script type="text/javascript">
-      function page() {
-        return {
-          essentialLinks: [
-            {
-              url:
-                "https://github.com/modularscale/modularscale-sass",
-              name: "Modular Scale",
-            },
-            {
-              url: "https://tailwindcss.com",
-              name: "Tailwind CSS",
-            },
-            {
-              url:
-                "https://getbootstrap.com/docs/4.5/getting-started/theming",
-              name: "Theming Bootstrap",
-            },
-          ],
-          ecosystem: [
-            {
-              url: "http://getbem.com",
-              name: "BEM",
-            },
-            {
-              url: "http://smacss.com",
-              name: "SMACSS",
-            },
-          ],
-          installedPlugins: [
-            {
-              url: "https://babeljs.io",
-              name: "Webpack",
-            },
-            {
-              url: "https://tailwindcss.com",
-              name: "Babel",
-            },
-            {
-              url: "https://prettier.io",
-              name: "Prettier",
-            },
-            {
-              url: "https://postcss.org",
-              name: "PostCSS",
-            },
-            {
-              url: "https://eslint.org",
-              name: "ESLint",
-            },
-          ],
-        };
-      }
-    </script>
     <!--jQuery-->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -220,14 +222,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <!-- Alpine.js -->
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js"
-      defer
-    ></script>
     <!-- Custom script -->
-    <script src="./../dist/js/vendor.bundle.js"></script>
     <script src="./../dist/js/main.bundle.js"></script>
   </body>
 </html>

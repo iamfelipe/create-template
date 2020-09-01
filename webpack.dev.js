@@ -2,17 +2,35 @@
 const merge = require("webpack-merge");
 const path = require("path");
 
-// Webpack plugins
-const webpack = require("webpack");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
 // Config files
 const commonConfig = require("./webpack.common.js");
 const settings = require("./webpack.settings.js");
 
-// Configure Clean webpack
-const configureCleanWebpack = () => {
-  return {};
+// Configure the webpack-dev-server
+const configureDevServer = () => {
+  return {
+    port: settings.devServerConfig.port(),
+    hot: true,
+    https: settings.devServerConfig.https(),
+    headers: { "Access-Control-Allow-Origin": "*" },
+    overlay: true,
+    compress: true,
+
+    contentBase: path.resolve(__dirname, settings.paths.templates),
+    watchContentBase: true,
+
+    proxy: {
+      "/": {
+        index: "",
+        context: () => true,
+        target: settings.devServerConfig.proxy(),
+        publicPath: settings.devServerConfig.public(),
+        secure: false,
+        changeOrigin: true,
+        xfwd: true,
+      },
+    },
+  };
 };
 
 // Configure the Postcss loader
@@ -27,44 +45,6 @@ const configurePostcssLoader = () => {
   };
 };
 
-// Configure Image loader
-const configureImageLoader = () => {
-  return {
-    test: /\.(png|jpe?g|gif|svg|webp)$/i,
-    use: [
-      {
-        loader: "file-loader",
-        options: {
-          name: "img/[name].[ext]?[contenthash:4]",
-        },
-      },
-    ],
-  };
-};
-
-// Configure the webpack-dev-server
-const configureDevServer = () => {
-  return {
-    contentBase: path.resolve(__dirname, settings.paths.templates),
-    host: settings.devServerConfig.host(),
-    port: settings.devServerConfig.port(),
-    disableHostCheck: true,
-    hot: true,
-    overlay: true,
-    https: !!parseInt(settings.devServerConfig.https()),
-    watchContentBase: true,
-    watchOptions: {
-      poll: true,
-      ignored: /node_modules/,
-    },
-    writeToDisk: true,
-    compress: true,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
-  };
-};
-
 const devConfig = {
   mode: "development",
   devtool: "inline-source-map",
@@ -73,12 +53,8 @@ const devConfig = {
   },
   devServer: configureDevServer(),
   module: {
-    rules: [configurePostcssLoader(), configureImageLoader()],
+    rules: [configurePostcssLoader()],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new CleanWebpackPlugin(configureCleanWebpack()),
-  ],
 };
 
 // Development module exports

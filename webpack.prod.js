@@ -6,7 +6,6 @@ const git = require("git-rev-sync");
 const moment = require("moment");
 
 // Webpack plugins
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -38,45 +37,13 @@ const configureBanner = () => {
   };
 };
 
-// Configure Clean webpack
-const configureCleanWebpack = () => {
+// Configure the Postcss loader
+const configurePostcssLoader = () => {
   return {
-    cleanOnceBeforeBuildPatterns: settings.paths.dist.clean,
-    verbose: true,
-    dry: false,
-  };
-};
-
-// Configure Image loader
-const configureImageLoader = () => {
-  return {
-    test: /\.(png|jpe?g|gif|svg|webp)$/i,
+    test: /\.s[ac]ss$/i,
     use: [
       {
-        loader: "file-loader",
-        options: {
-          name: "img/[name].[ext]?[contenthash:4]",
-        },
-      },
-      {
-        loader: "img-loader",
-        options: {
-          plugins: [
-            require("imagemin-gifsicle")({
-              interlaced: true,
-            }),
-            require("imagemin-mozjpeg")({
-              progressive: true,
-              arithmetic: false,
-            }),
-            require("imagemin-optipng")({
-              optimizationLevel: 5,
-            }),
-            require("imagemin-svgo")({
-              plugins: [{ convertPathData: false }],
-            }),
-          ],
-        },
+        loader: MiniCssExtractPlugin.loader,
       },
     ],
   };
@@ -110,32 +77,21 @@ const configureTerser = () => {
   };
 };
 
-// Configure the Postcss loader
-const configurePostcssLoader = () => {
-  return {
-    test: /\.s[ac]ss$/i,
-    use: [
-      {
-        loader: MiniCssExtractPlugin.loader,
-      },
-    ],
-  };
-};
-
 const prodConfig = {
   mode: "production",
-  devtool: "source-map",
   optimization: configureOptimization(),
+  output: {
+    publicPath: settings.devServerConfig.public(),
+  },
   module: {
-    rules: [configureImageLoader(), configurePostcssLoader()],
+    rules: [configurePostcssLoader()],
   },
   plugins: [
-    new webpack.BannerPlugin(configureBanner()),
-    new CleanWebpackPlugin(configureCleanWebpack()),
     new MiniCssExtractPlugin({
       path: path.resolve(__dirname, settings.paths.dist.base),
       filename: path.join("./css", "[name].css?[contenthash:4]"),
     }),
+    new webpack.BannerPlugin(configureBanner()),
   ],
 };
 

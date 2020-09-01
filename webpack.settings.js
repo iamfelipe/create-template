@@ -1,14 +1,15 @@
 // webpack.settings.js - webpack settings config
 
+const srcRoot = "src";
+
 // Webpack settings exports
 module.exports = {
   paths: {
     src: {
-      js: "./src/js/",
+      js: "./" + srcRoot + "/js/",
     },
     dist: {
       base: "./dist/",
-      clean: ["**/*"],
     },
     templates: "./templates/",
   },
@@ -20,22 +21,25 @@ module.exports = {
   },
   copyWebpackConfig: [
     {
-      context: "./src/assets/",
+      context: "./" + srcRoot + "/assets/",
       from: "**/*",
       to: "./assets/[folder]/[name].[ext]?[contenthash]",
       flatten: true,
     },
   ],
   devServerConfig: {
+    proxy: () => "",
     public: () => "/dist/",
-    host: () => "localhost",
-    port: () => 8080,
-    https: () => false,
+    port: () => 8181,
+    https: () => true,
   },
   manifestConfig: {
     basePath: "",
   },
   purgeCssConfig: {
-    paths: ["./templates/**/*.{twig,html}", "./src/js/**/*.js"],
+    paths: [
+      "./templates/**/*.{twig,html}",
+      "./" + srcRoot + "/js/**/*.js",
+    ],
   },
 };

@@ -1,11 +1,5 @@
-// Import theme styles
-import "../css/main.scss";
-
-// Process custom static images
-function importAll(r) {
-  return r.keys().map(r);
-}
-importAll(require.context("../static/", false, /\.(png|jpe?g|svg)$/));
+// Import custom styles
+import "@/src/css/main.scss";
 
 // Accept HMR as per: https://webpack.js.org/api/hot-module-replacement#accept
 if (module.hot) {

@@ -26,7 +26,7 @@ $custom-scale: (
   ),
   "4xl": (
     scale: 5,
-    font-weight: 700,
+    font-weight: $font-weight-bold,
   ),
   "3xl": (
     scale: 4,
@@ -42,8 +42,8 @@ $custom-scale: (
   ),
   base: (
     scale: 0,
-    line-height: 1.5,
-    font-weight: 400,
+    line-height: $line-height-base,
+    font-weight: $font-weight-base,
   ),
   sm: (
     scale: -1,
@@ -68,9 +68,9 @@ $asset-base-path: "..";
   @include set-text($custom-scale);
   // colors
   --color-black: #{$black};
+  // create palette from 50 to 900
   @include palette("primary", $primary);
   @include palette("secondary", $secondary);
   // components
-  --border-width: #{em(1.5)};
   --vertical-rhythm: calc(#{$font-size-base} * #{$line-height-base});
 }
