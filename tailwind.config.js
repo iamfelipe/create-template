@@ -59,8 +59,11 @@ const fontFamily = {
 module.exports = {
   target: "ie11",
   purge: {
-    enabled: false, // To enable purge add variable 'production'
+    enabled: production, // To enable purge add variable 'production'
     content: settings.purgeCssConfig.paths,
+    whitelist: settings.purgeCssConfig.whitelist,
+    whitelistPatterns: settings.purgeCssConfig.whitelistPatterns,
+    extensions: settings.purgeCssConfig.extensions,
   },
   theme: {
     extend: {

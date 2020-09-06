@@ -5,6 +5,7 @@ const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 
 // Config files
@@ -17,7 +18,7 @@ const configureEntries = () => {
   for (const [key, value] of Object.entries(settings.entries)) {
     entries[key] = path.resolve(
       __dirname,
-      settings.paths.src.js + value
+      settings.paths.src.js + value,
     );
   }
   return entries;
@@ -75,7 +76,7 @@ const configurePostcssLoader = () => {
   return {
     test: /\.s[ac]ss$/i,
     use: [
-      // Translates CSS into CommonJS
+      // Translates CSS into CommonJSs
       {
         loader: "css-loader",
         options: {
@@ -99,11 +100,10 @@ const configurePostcssLoader = () => {
 // Configure Font loader
 const configureFontLoader = () => {
   return {
-    test: /\.(ttf|eot|woff|woff2?)$/i,
+    test: /\.(ttf|eot|woff2?)$/i,
     exclude: /img/,
-    loader: "url-loader",
+    loader: "file-loader",
     options: {
-      limit: 5000,
       name: "fonts/[name].[ext]?[contenthash:4]",
     },
   };
@@ -129,6 +129,14 @@ const configureManifest = (fileName) => {
       file.name = file.name.replace(/(\.[a-f0-9]{32})(\..*)$/, "$2");
       return file;
     },
+  };
+};
+
+// Configure Vue loader
+const configureVueLoader = () => {
+  return {
+    test: /\.vue$/,
+    loader: "vue-loader",
   };
 };
 
@@ -159,6 +167,7 @@ module.exports = {
       configureBabelLoader(),
       configureFontLoader(),
       configureImageLoader(),
+      configureVueLoader(),
     ],
   },
   plugins: [
@@ -169,5 +178,6 @@ module.exports = {
       sound: "Funk",
       successSound: "Pop",
     }),
+    new VueLoaderPlugin(),
   ],
 };

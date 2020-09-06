@@ -40,6 +40,15 @@ module.exports = {
     paths: [
       "./templates/**/*.{twig,html}",
       "./" + srcRoot + "/js/**/*.js",
+      "./" + srcRoot + "/vue/**/*.{vue,html}",
+    ],
+    whitelist: [],
+    whitelistPatterns: [],
+    extensions: [
+      "html",
+      "js",
+      "twig",
+      "vue",
     ],
   },
 };
