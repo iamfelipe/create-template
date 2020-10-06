@@ -2,8 +2,8 @@
  * @project        frontendboilerplate
  * @name           main.bundle.js
  * @author         Serempre
- * @build          Sat, Sep 5, 2020 8:52 PM ET
- * @release        28456f34a8ea819f8575ec3c5eb7d9e67fc807c1 [upstream-vue]
+ * @build          Tue, Oct 6, 2020 4:46 PM ET
+ * @release        90d5d60e989a95cce8652c618ba44d9305d84b93 [upstream-vue]
  * @copyright      Copyright (c) 2020 Serempre
  *
  */

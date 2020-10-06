@@ -18,7 +18,7 @@ const configureDevServer = () => {
 
     contentBase: path.resolve(__dirname, settings.paths.templates),
     watchContentBase: true,
-
+    // Settings for http-proxy-middleware.
     proxy: {
       "/": {
         index: "",
@@ -26,6 +26,9 @@ const configureDevServer = () => {
         target: settings.devServerConfig.proxy(),
         publicPath: settings.devServerConfig.public(),
         secure: false,
+        // These settings allow Drupal authentication to work, so you can sign
+        // in to your Drupal site via the proxy. They require some corresponding
+        // configuration in Drupal's settings.php.
         changeOrigin: true,
         xfwd: true,
       },

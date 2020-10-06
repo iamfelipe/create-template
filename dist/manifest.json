@@ -1,9 +1,9 @@
 {
   "main.css": "/dist/css/main.css?1ebb",
   "main.js": "/dist/js/main.bundle.js",
-  "assets/README.md?5bbfc23db2ca3ba6932e4fb89aff574e": "/dist/assets/README.md?5bbfc23db2ca3ba6932e4fb89aff574e",
   "css/main.css.map?1ebb": "/dist/css/main.css.map?1ebb",
   "fonts/main.scss": "/dist/fonts/Rubik-Black.woff?c203",
   "img/webpack.png?acb2": "/dist/img/webpack.png?acb2",
-  "js/main.bundle.js.LICENSE.txt": "/dist/js/main.bundle.js.LICENSE.txt"
+  "js/main.bundle.js.LICENSE.txt": "/dist/js/main.bundle.js.LICENSE.txt",
+  "static/README.md?9018d2ae3ddf15e00f66308ee8d7b606": "/dist/static/README.md?9018d2ae3ddf15e00f66308ee8d7b606"
 }

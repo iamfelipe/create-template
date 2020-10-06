@@ -47,15 +47,7 @@ Site template built with Top-Notch technologies and methodologies.
 
 To get a local copy up and running follow these simple steps.
 
-1. First, install and generate a custom template by the custom CLI:
-
-   ```sh
-   $ npx @felipecastillo/create-template --install
-   # or
-   $ npm init @felipecastillo/template --install
-   ```
-
-2. Install packages if not installed by CLI:
+1. Install packages if not installed by CLI:
 
    ```sh
    $ npm install
@@ -63,7 +55,7 @@ To get a local copy up and running follow these simple steps.
    $ yarn
    ```
 
-3. Setup custom file routes in `webpack.settings.js`:
+2. Setup custom file routes in `webpack.settings.js`:
 
    ```javascript
    // webpack.settings.js
@@ -90,7 +82,7 @@ To get a local copy up and running follow these simple steps.
    };
    ```
 
-4. Import custom theme styles in `src/js/index.js` file:
+3. Import custom theme styles in `src/js/index.js` file:
 
    ```javascript
    // index.js
@@ -101,9 +93,24 @@ To get a local copy up and running follow these simple steps.
 
    > To disable **Tailwind CSS** remove the require statement on `postcss.config.js` and its SCSS partial on `css/vendor`.
 
-5. Include file routes inside `dist` into the project.
+4. Include file routes inside `dist` into the project.
 
    > 📦 Scripts, styles, assets, etc.
+
+5. Setup the proxy and public routes in `webpack.settings.js` file:
+
+   ```javascript
+   // webpack.settings.js
+   module.exports = {
+      // ...
+      devServerConfig: {
+        proxy: () => "https://site-dev.dd:8443", // Local site
+        public: () => "/themes/custom/my_custom_theme/dist/", // Route from project root
+        https: () => true,
+      },
+     // ...
+   };
+   ```
 
 6. Then in the same directory, run the development server:
    ```sh
@@ -146,4 +153,4 @@ Distributed under the MIT License. See [LICENSE](https://github.com/iamfelipe/st
 
 ## Collaborators
 
-- Felipe Castillo <castillo.devsigner@icloud.com>
+- Felipe Castillo <fcastillo@serempre.com>

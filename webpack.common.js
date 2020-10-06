@@ -124,7 +124,7 @@ const configureImageLoader = () => {
 const configureManifest = (fileName) => {
   return {
     fileName: fileName,
-    basePath: settings.manifestConfig.basePath,
+    basePath: "",
     map: (file) => {
       file.name = file.name.replace(/(\.[a-f0-9]{32})(\..*)$/, "$2");
       return file;
@@ -147,7 +147,6 @@ module.exports = {
   output: {
     filename: path.join("./js", "[name].bundle.js"),
     path: path.resolve(__dirname, settings.paths.dist.base),
-    publicPath: settings.urls.publicPath(),
   },
   resolve: {
     extensions: [".js", ".vue", ".json"],

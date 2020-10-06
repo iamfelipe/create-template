@@ -51,7 +51,7 @@
     "postcss-preset-env": "^6.7.0",
     "vue": "^2.6.12",
     "stickybits": "^3.7.7",
-    "tailwindcss": "^1.8.2"
+    "tailwindcss": "^1.8.1"
   },
   "devDependencies": {
     "vue-loader": "^15.9.3",
